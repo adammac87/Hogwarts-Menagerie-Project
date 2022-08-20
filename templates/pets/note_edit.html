@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+edit fluff
+
+<form action="/pets/{{pet.id}}" method="POST">
+
+    <div>
+        <label for="notes">notes:</label>
+        <input type="text" name="notes" id="name">
+    </div>
+
+
+    <button type="submit">update notes
+    </button>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

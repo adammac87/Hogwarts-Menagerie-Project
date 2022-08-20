@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+inside notes
+
+
+
+<div>
+    <p><a href="/pets/{{pet.id}}/edit">Edit</a></p>
+
+</div>
+
+<div>
+    PET NOTES: {{pet.notes}}
+</div>
+
+
+{% endblock %}
