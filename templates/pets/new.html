@@ -3,25 +3,49 @@
 new fluff
 
 
-<form action ="/pets" method ="post"></form>
+<form action ="/pets" method ="POST">
 
 <div>
     <label for="name">Name:</label>
-    <input type="text" id="name">
+    <input type="text" name="name" id="name">
+</div>
+<div>
+    <label for="breed">Breed:</label>
+    <input type="text" name="breed" id="breed">
+</div>
+<div>
+    <label for="gender">Gender:</label>
+    <input type="text" name="gender" id="gender">
+</div>
+<div>
+    <label for="birthday">Birthday:</label>
+    <input type="text" name="birthday" id="birthday">
+</div>
+<div>
+    <label for="owner_details">Owner Details:</label>
+    <input type="text" name="owner_details" id="owner_details">
+</div>
+<div>
+    <label for="contact_details">Contact Details:</label>
+    <input type="text" name="contact_details" id="contact_details">
+</div>
+<div>
+    <label for="notes">Notes:</label>
+    <input type="text" name= "notes" id="notes">
+</div>
+<div>
+    <label for="vet">Vet:</label>
+    <select id="vet" name="vet_id">
+        {% for vet in all_vets%} 
+        <option value="{{vet.id}}">{{vet.first_name}}</option>
+        {% endfor %}
+        </select>
+
 </div>
 
+<button type="submit">add pet</button>
 
-
-
-
-
-
-
-
-
-
-
-
+</form>
 
 
 {% endblock %}
