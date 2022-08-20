@@ -4,4 +4,4 @@ from repositories import vet_repository
 from repositories import pet_repository
 from models.pet import Pet
 
-pets_blueprint = Blueprint("pets",__name__)
+vets_blueprint = Blueprint("vets",__name__)

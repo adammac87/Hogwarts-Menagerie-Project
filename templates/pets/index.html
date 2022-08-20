@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+all fluff
+
+<li><a href="/pets/new">New Pet</a></li>
+    <br>
+    <hr>
+    <br>
+{% for pet in all_pets %}
+
+    Name: <a href="/pets/{{pet.id}}">{{pet.name}} </a><br>
+    Breed: {{pet.breed}} <br>
+    Owner_name: {{pet.Owner_name}} <br>
+    Vet: {{pet.vet.first_name}} {{pet.vet.last_name}}<br>
+    Pet ID: {{pet.id}}
+    <br>
+    <hr>
+    <br>
+
+
+{% endfor %}
+
+{% endblock %}
+    
+
+    <!-- <form class="delete-form" action="/books/{{book.id}}/delete" method="POST">
+      
+        <button class="trash-button">Delete<i class="fa fa-trash-o fa-3x" style="color:red"
+                aria-hidden="true"></i></button>
+   
+        <hr><br>
+    </form> -->
+

@@ -29,9 +29,9 @@ pet_repo.save_pet(pet1)
 # print(pet_repo.select_pet(1).vet.__dict__) 
 # -goes into vet object
 
-pet = Pet("1","2","3","4","5","6","7",vet2,2)
-pet_repo.update_pet(pet)
-# ---updates a pet
+# pet = Pet("1","2","3","4","5","6","7",vet2,2)
+# pet_repo.update_pet(pet)
+# # ---updates a pet
 
 # vet = Vet("1","2","3",1 )
 # vet_repo.update_vet(vet)   
