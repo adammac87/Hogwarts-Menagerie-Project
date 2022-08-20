@@ -66,6 +66,7 @@ def update_pet(id):
     return redirect('/pets')
 
 
+
 # @pets_blueprint.route("/pets/<id>/notes_edit", methods=['GET'])
 # def get_notes(id):
 #     pet = pet_repository.select_pet(id)
