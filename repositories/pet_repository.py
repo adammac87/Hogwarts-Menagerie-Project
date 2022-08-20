@@ -4,8 +4,8 @@ from models.pet import Pet
 import repositories.vet_repository as vet_repository 
 
 def save_pet(pet):
-    sql = "INSERT INTO pets (name, breed, gender,birthday,owner_name, contact_details, notes, vet_id) VALUES (%s, %s, %s,%s,%s,%s,%s,%s) RETURNING *"
-    values = [pet.name, pet.breed, pet.gender, pet.birthday, pet.owner_name,pet.contact_details, pet.notes, pet.vet.id]
+    sql = "INSERT INTO pets (name, breed, gender,birthday,owner_name, contact_details, notes,checked_in, vet_id) VALUES (%s, %s, %s,%s,%s,%s,%s,%s,%s) RETURNING *"
+    values = [pet.name, pet.breed, pet.gender, pet.birthday, pet.owner_name,pet.contact_details, pet.notes, pet.checked_in,pet.vet.id]
     results = run_sql(sql , values)
     id = results[0]["id"]
     pet.id = id
@@ -22,8 +22,8 @@ def delete_pet(id):
 
 
 def update_pet(pet):
-    sql = "UPDATE pets SET (name, breed, gender, birthday, owner_name,contact_details, notes, vet_id) = (%s,%s,%s,%s,%s,%s,%s,%s) WHERE id = %s"
-    values = [pet.name, pet.breed, pet.gender, pet.birthday, pet.owner_name, pet.contact_details, pet.notes, pet.vet.id, pet.id]
+    sql = "UPDATE pets SET (name, breed, gender, birthday, owner_name,contact_details, notes,checked_in, vet_id) = (%s,%s,%s,%s,%s,%s,%s,%s,%s) WHERE id = %s"
+    values = [pet.name, pet.breed, pet.gender, pet.birthday, pet.owner_name, pet.contact_details, pet.notes,pet.checked_in, pet.vet.id, pet.id]
     run_sql(sql, values)
 
 
@@ -35,7 +35,7 @@ def select_all_pets():
     results= run_sql(sql)
     for row in results:
         vet = vet_repository.select_vet(row["vet_id"])
-        pet = Pet(row["name"], row ["breed"], row ["gender"], row ["birthday"],row ["owner_name"], row ["contact_details"], row["notes"], vet , row ["id"])
+        pet = Pet(row["name"], row ["breed"], row ["gender"], row ["birthday"],row ["owner_name"], row ["contact_details"], row["notes"],row["checked_in"], vet , row ["id"])
         pets.append(pet)
     return pets
 
@@ -47,5 +47,5 @@ def select_pet(id):
 
     if result is not None:
         vet = vet_repository.select_vet(result["vet_id"])
-        pet = Pet(result["name"], result["breed"], result["gender"], result["birthday"], result["owner_name"], result["contact_details"], result["notes"] ,vet, result["id"])
+        pet = Pet(result["name"], result["breed"], result["gender"], result["birthday"], result["owner_name"], result["contact_details"], result["notes"] ,result["checked_in"],vet, result["id"])
     return pet 

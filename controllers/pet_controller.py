@@ -28,6 +28,7 @@ def new_pet():
 
 @pets_blueprint.route("/pets", methods = ['POST'])
 def create_pet():
+    print("this is request.form",request.form)
     name = request.form['name']
     breed = request.form['breed']
     gender = request.form['gender']
@@ -35,8 +36,14 @@ def create_pet():
     owner_details = request.form['owner_details']
     contact_details = request.form['contact_details']
     notes = request.form['notes']
+    if "checked_in" in request.form.keys():
+        checked_in = True
+    else:
+        checked_in = False  
+    
+    print(checked_in)
     vet = vet_repository.select_vet(request.form['vet_id'])
-    new_pet = Pet(name,breed, gender,birthday, owner_details , contact_details, notes, vet)
+    new_pet = Pet(name,breed, gender,birthday, owner_details , contact_details, notes,checked_in,  vet)
     pet_repository.save_pet(new_pet)
     return redirect('/pets')
 
@@ -60,22 +67,33 @@ def update_pet(id):
     owner_details = request.form['owner_details']
     contact_details = request.form['contact_details']
     notes = request.form['notes']
+    if "checked_in" in request.form.keys():
+        checked_in = True
+    else:
+        checked_in = False  
     vet = vet_repository.select_vet(request.form['vet_id'])
-    new_pet = Pet(name,breed, gender,birthday, owner_details , contact_details,notes, vet ,id)
+    new_pet = Pet(name,breed, gender,birthday, owner_details , contact_details,notes,checked_in, vet ,id)
     pet_repository.update_pet(new_pet)
     return redirect('/pets')
 
 
 
-# @pets_blueprint.route("/pets/<id>/notes_edit", methods=['GET'])
-# def get_notes(id):
-#     pet = pet_repository.select_pet(id)
-#     return render_template('pets/notes.html', pet=pet)
+@pets_blueprint.route("/pets/<id>/notes", methods=['GET'])
+def get_notes(id):
+    pet = pet_repository.select_pet(id)
+    return render_template('pets/notes.html', pet=pet)
 
 
-# @pets_blueprint.route("/pets/<id>/notes", methods=['POST'])
-# def update_notes(id):
-#     notes = request.form['notes']
-#     new_notes= Pet(notes)
-#     pet_repository.update_pet(new_notes ,id)
-#     return render_template('/pets')
+@pets_blueprint.route("/pets/<id>/notes_edit", methods=['POST'])
+def update_notes(id):
+    notes = request.form['notes']
+    pet =pet_repository.select_pet(id)
+    pet.notes = notes
+    pet_repository.update_pet(pet)
+    return redirect('/pets')
+
+
+@pets_blueprint.route("/pets/<id>/notes_edit", methods=['GET'])
+def get_notes_get(id):
+    pet = pet_repository.select_pet(id)
+    return render_template('pets/note_edit.html', pet=pet)

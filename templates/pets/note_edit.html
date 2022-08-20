@@ -2,11 +2,11 @@
 {% block content %}
 edit fluff
 
-<form action="/pets/{{pet.id}}" method="POST">
+<form action="/pets/{{pet.id}}/notes_edit" method="POST">
 
     <div>
         <label for="notes">notes:</label>
-        <input type="text" name="notes" id="name">
+        <input type="text" name="notes" id="notes">
     </div>
 
 

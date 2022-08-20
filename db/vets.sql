@@ -17,5 +17,6 @@ CREATE TABLE pets(
     owner_name VARCHAR(255),
     contact_details VARCHAR(255),
     notes VARCHAR(255),
+    checked_in BOOLEAN,
     vet_id INT NOT NULL REFERENCES vets(id) ON DELETE CASCADE
 );

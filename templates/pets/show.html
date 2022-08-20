@@ -3,12 +3,12 @@
 show  fluff - this is my individual pet view. be nice to have a seperate link to notes. maybe add a pic?
 
 <div>
-    {{pet.name}}<br>{{pet.breed}}<br>{{pet.gender}}<br>{{pet.birthday}}<br>{{pet.owner_name}}<br>{{pet.contact_details}}<br>{{pet.notes}}<br>{{pet.vet.first_name}}<br>{{pet.vet.last_name}}
+    {{pet.name}}<br>{{pet.breed}}<br>{{pet.gender}}<br>{{pet.birthday}}<br>{{pet.owner_name}}<br>{{pet.contact_details}}<br>{{pet.notes}}<br>{{pet.checked_in}}<br>{{pet.vet.first_name}}<br>{{pet.vet.last_name}}
 </div>
 
 <div>
 <p><a href="/pets/{{pet.id}}/edit">Edit</a></p>
-<!-- <p><a href="/pets/{{pet.id}}/notes">notes</a></p> -->
+<p><a href="/pets/{{pet.id}}/notes">notes</a></p>
 </div>
 
 {% endblock %}
