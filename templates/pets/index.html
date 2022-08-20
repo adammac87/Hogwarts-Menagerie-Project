@@ -13,11 +13,14 @@ all fluff - a nice view of all pets. maybe with pics?
     Owner_name: {{pet.owner_name}} <br>
     Vet: {{pet.vet.first_name}} {{pet.vet.last_name}}<br>
     Pet ID: {{pet.id}}
-    <br>
-    <hr>
-    <br>
+ 
+<form action="/pets/delete/{{pet.id}}" method='POST'>
+<input type="submit" value ="Remove Pet">
+</form>
 
-
+<br>
+<hr>
+<br>
 {% endfor %}
 
 {% endblock %}
