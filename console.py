@@ -15,11 +15,10 @@ vet_repo.save(vet1)
 vet2 = Vet("anna", "mitchell", "dogs")
 vet_repo.save(vet2)
 
-pet1 = Pet("fido", "lab", vet1)
+pet1 = Pet("fido", "lab", "m", "15.11.87", "adam", "0132525" , "sdgsdgdsgsdgsdgdgs", vet1)
 pet_repo.save(pet1)
-pet2 = Pet("loki", "moggy", vet1)
-pet_repo.save(pet2)
-pet3= Pet("navi", "moggy", vet2)
-pet_repo.save(pet3)
-
+pet1 = Pet("loki", "moggy", "m", "20.12.19","adam", "01352353" , "s32566236gsdgdgs", vet1)
+pet_repo.save(pet1)
+pet1 = Pet("navi", "moggy", "m", "01.23.87","adam", "0132525" , "ffhfddfhsdgsdgdgs", vet2)
+pet_repo.save(pet1)
 
