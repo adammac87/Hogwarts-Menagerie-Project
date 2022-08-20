@@ -2,7 +2,7 @@ from db.run_sql import run_sql
 from models.pet import Pet
 from models.vet import Vet
 
-def save(vet):
+def save_vet(vet):
     sql = "INSERT INTO vets (first_name, last_name, speciality) VALUES (%s,%s,%s) RETURNING *"
     values = [vet.first_name, vet.last_name, vet.speciality]
     results = run_sql (sql,values)
@@ -33,7 +33,13 @@ def select_vet(id):
         vet = Vet(result["first_name"], result["last_name"], result["speciality"] ,result["id"])
     return vet
 
-def delete(id):
+def delete_vet(id):
     sql = "DELETE FROM vets WHERE id = %s"
     values = [id]
+    run_sql(sql, values)
+
+
+def update_vet(vet):
+    sql = "UPDATE vets SET (first_name, last_name, speciality) = (%s,%s,%s) WHERE id =%s"
+    values = [vet.first_name, vet.last_name, vet.speciality, vet.id]
     run_sql(sql, values)

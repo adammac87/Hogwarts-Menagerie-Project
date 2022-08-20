@@ -3,7 +3,7 @@ from models.vet import Vet
 from models.pet import Pet
 import repositories.vet_repository as vet_repository 
 
-def save(pet):
+def save_pet(pet):
     sql = "INSERT INTO pets (name, breed, gender,birthday,owner_name, contact_details, notes, vet_id) VALUES (%s, %s, %s,%s,%s,%s,%s,%s) RETURNING *"
     values = [pet.name, pet.breed, pet.gender, pet.birthday, pet.owner_name,pet.contact_details, pet.notes, pet.vet.id]
     results = run_sql(sql , values)
@@ -14,6 +14,20 @@ def save(pet):
 def delete_all_pets():
     sql = "DELETE FROM pets"
     run_sql(sql)
+
+def delete_pet(id):
+    sql = "DELETE FROM pets WHERE id = %s"
+    values = [id]
+    run_sql(sql ,values)
+
+
+def update_pet(pet):
+    sql = "UPDATE pets SET (name, breed, gender, birthday, owner_name,contact_details, notes, vet_id) = (%s,%s,%s,%s,%s,%s,%s,%s) WHERE id = %s"
+    values = [pet.name, pet.breed, pet.gender, pet.birthday, pet.owner_name, pet.contact_details, pet.notes, pet.vet.id, pet.id]
+    run_sql(sql, values)
+
+
+
 
 def select_all_pets():
     pets = []
