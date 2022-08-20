@@ -22,3 +22,21 @@ pet_repo.save(pet1)
 pet1 = Pet("navi", "moggy", "m", "01.23.87","adam", "0132525" , "ffhfddfhsdgsdgdgs", vet2)
 pet_repo.save(pet1)
 
+
+# print(vet_repo.select_vet(1).__dict__)
+# print(pet_repo.select_pet(1).__dict__)
+# print(pet_repo.select_pet(1).vet.__dict__) -goes into vet object
+
+
+# vet_repo.delete(1)
+
+# print(vet_repo.select_vet(2).__dict__)
+
+# for pet in pet_repo.select_all_pets():
+#     print(pet.__dict__)
+
+
+# for i in vet_repo.select_all_vets():
+#     print(i.__dict__)
+
+

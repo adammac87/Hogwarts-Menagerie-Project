@@ -14,3 +14,24 @@ def save(pet):
 def delete_all_pets():
     sql = "DELETE FROM pets"
     run_sql(sql)
+
+def select_all_pets():
+    pets = []
+    sql = "SELECT * FROM pets"
+    results= run_sql(sql)
+    for row in results:
+        vet = vet_repository.select_vet(row["vet_id"])
+        pet = Pet(row["name"], row ["breed"], row ["gender"], row ["birthday"],row ["owner_name"], row ["contact_details"], row["notes"], vet , row ["id"])
+        pets.append(pet)
+    return pets
+
+def select_pet(id):
+    pet = None
+    sql = "SELECT * FROM pets WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        vet = vet_repository.select_vet(result["vet_id"])
+        pet = Pet(result["name"], result["breed"], result["gender"], result["birthday"], result["owner_name"], result["contact_details"], result["notes"] ,vet, result["id"])
+    return pet 
