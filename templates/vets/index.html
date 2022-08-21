@@ -2,6 +2,8 @@
 {% block content %}
 This is just going to be a list of all my vets. on this or next page i will be able to delete and add them
 
+<div class="boxed">
+
 <li><a href="/vets/new">New Vet</a></li>
 
 
@@ -23,7 +25,7 @@ Name: <a href="/vets/{{vet.id}}"><br><br>{{vet.first_name}} <br>{{vet.last_name}
 <hr>
 <br>
 
-
+</div>
 
 
 {% endblock %}
