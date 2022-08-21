@@ -8,6 +8,7 @@ all fluff - a nice view of all pets. maybe with pics?
     <br>
 {% for pet in all_pets %}
 
+    Checked in: {{pet.checked_in}}<br>
     Name: <a href="/pets/{{pet.id}}">{{pet.name}} </a><br>
     Breed: {{pet.breed}} <br>
     Owner_name: {{pet.owner_name}} <br>
