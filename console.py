@@ -10,16 +10,32 @@ import repositories.vet_repository as vet_repo
 
 
 
-vet1 = Vet("Bill", "Ross", "Cats")
+vet1 = Vet("Sirius", "Black", "Dogs")
 vet_repo.save_vet(vet1)
-vet2 = Vet("Anna", "Mitchell", "Dogs")
+vet2 = Vet("Hermoine", "Granger", "Cats")
 vet_repo.save_vet(vet2)
+vet3 = Vet("Harry", "Potter", "Owls")
+vet_repo.save_vet(vet3)
+vet4 = Vet("Ron ", "Weasley", "Rats")
+vet_repo.save_vet(vet4)
+vet5 = Vet("Neville", "Longbottom", "Toads")
+vet_repo.save_vet(vet5)
 
-pet1 = Pet("Fido", "Lab", "Male", "23.04.19", "Adam", "0153252" , "Good doggo",True, vet1)
+pet1 = Pet("Fang", "Hound", "Male", "23.04.19", "Hagrid", "0153252" , "Good doggo",True, vet1)
 pet_repo.save_pet(pet1)
-pet1 = Pet("Loki", "Moggy", "Male", "20.12.20", "Adam", "0132534",  "Big Kitty", True, vet1)
+pet1 = Pet("Scabbers", "Rat", "Male", "20.12.20", "Percy", "0132534",  "Big Kitty", True, vet1)
 pet_repo.save_pet(pet1)
-pet1 = Pet("Navi", "Moggy", "Female", "01.09.21","Adam", "0132525" , "Small Kitty", True, vet2)
+pet1 = Pet("Hedwig", "Owl", "Female", "01.09.21","Harry", "0132525" , "Small Kitty", True, vet2)
+pet_repo.save_pet(pet1)
+pet1 = Pet("Nagini", "Snake", "Female", "01.09.21","Tom", "0132525" , "Small Kitty", True, vet2)
+pet_repo.save_pet(pet1)
+pet1 = Pet("Buckbeak", "Gryphon", "Male", "01.09.21","Hagrid", "0132525" , "Small Kitty", True, vet2)
+pet_repo.save_pet(pet1)
+pet1 = Pet("Fawkes", "Phoenix", "Male", "01.09.21","ALbus", "0132525" , "Small Kitty", True, vet2)
+pet_repo.save_pet(pet1)
+pet1 = Pet("Mrs Norris", "Cat", "Female", "01.09.21","Filch", "0132525" , "Small Kitty", True, vet2)
+pet_repo.save_pet(pet1)
+pet1 = Pet("Aragog", "Spider", "Male", "01.09.21","hagrid", "0132525" , "Small Kitty", True, vet2)
 pet_repo.save_pet(pet1)
 
 

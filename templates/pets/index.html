@@ -1,12 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-all fluff - a nice view of all pets. maybe with pics?
+
+
+<body id="singlepet" >
 
 <li><a href="/pets/new">New Pet</a></li>
     <br>
     <hr>
     <br>
 {% for pet in all_pets %}
+<div class="boxed">
 
     Checked in: {{pet.checked_in}}<br>
     Name: <a href="/pets/{{pet.id}}">{{pet.name}} </a><br>
@@ -18,7 +21,7 @@ all fluff - a nice view of all pets. maybe with pics?
 <form action="/pets/delete/{{pet.id}}" method='POST'>
 <input type="submit" value ="Remove Pet">
 </form>
-
+</div>
 <br>
 <hr>
 <br>
@@ -26,6 +29,10 @@ all fluff - a nice view of all pets. maybe with pics?
 
 {% endblock %}
     
+
+
+
+</body>
 
     <!-- <form class="delete-form" action="/books/{{book.id}}/delete" method="POST">
       
