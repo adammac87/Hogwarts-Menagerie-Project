@@ -1,22 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
-This is just going to be a list of all my vets. on this or next page i will be able to delete and add them
 
-<div class="boxed">
+<body id="singlekeeper">
 
-<li><a href="/vets/new">New Vet</a></li>
+<div class="newbox">
+<li><a href="/vets/new">New Keeper</a></li>
+</div>
+
+
 
 
 {% for vet in all_vets %}
+<div class="boxed">
 <br>
-<hr>
-<br>
-Name: <a href="/vets/{{vet.id}}"><br><br>{{vet.first_name}} <br>{{vet.last_name}}</a>
 
+<br>
+Keeper Name: <a href="/vets/{{vet.id}}"><br><br>{{vet.first_name}} <br>{{vet.last_name}}</a>
+<br>
+<br>
 <form action="/vets/delete/{{vet.id}}" method='POST'>
-    <input type="submit" value="remove vet">
+    <input type="submit" value="Remove Keeper">
 </form>
-
+</div>
 
 {% endfor %}
 <br>
@@ -29,3 +34,5 @@ Name: <a href="/vets/{{vet.id}}"><br><br>{{vet.first_name}} <br>{{vet.last_name}
 
 
 {% endblock %}
+
+</body>

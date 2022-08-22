@@ -1,16 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-all vet fluff - this is just a nice little extra. be cool if i can show list of all the pets tied to a vet
-I want the functionlality to add and delete vets
-<div class="boxed">
+<!-- all vet fluff - this is just a nice little extra. be cool if i can show list of all the pets tied to a vet
+I want the functionlality to add and delete vets -->
+<div class="keeperboxed">
 <div>
-    Vet first name:{{vet.first_name}}<br>
-    Vet Last name{{vet.last_name}}<br>
-    Vet speciality{{vet.speciality}}
+    Keeper: First Name:     <br> {{vet.first_name}}<br>
+    Keeper: Last Name:       <br>{{vet.last_name}}<br>
+    Keeper: Speciality:      <br>{{vet.speciality}}
+
+    
 </div>
 
 <div>
-    <p><a href="/vets/{{vet.id}}/edit">Edit</a></p>
+    <p><a href="/vets/{{vet.id}}/edit">Change Keeper Details</a></p>
 </div>
 </div>
 {% endblock %}

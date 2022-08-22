@@ -49,3 +49,37 @@ def select_pet(id):
         vet = vet_repository.select_vet(result["vet_id"])
         pet = Pet(result["name"], result["breed"], result["gender"], result["birthday"], result["owner_name"], result["contact_details"], result["notes"] ,result["checked_in"],vet, result["id"])
     return pet 
+
+
+def show_all_vet_pets(pet):
+    pets = []
+    sql = "SELECT * FROM pets WHERE id =%s"
+    results = run_sql(sql)
+    for row in results:
+        vet = vet_repository.select_vet(row["vet_id"])
+        pet = Pet(row["name"], row["breed"], row["gender"], row["birthday"], row["owner_name"],
+                row["contact_details"], row["notes"], row["checked_in"], vet, row["id"])
+        pets.append(pet)
+    return pets
+
+
+
+
+# def search_by_petname(almost_name):
+#     pet_list = []
+#     sql = """SELECT pet.* FROM pets
+#     WHERE lower(pet.name) like %s"""
+#     values = [almost_name]
+#     results = run_sql(sql, values)
+#     for row in results:
+#         vet = vet_repository.select_vet(row["vet_id"])
+#         pet = Pet(row["name"], row["breed"], row["gender"], row["birthday"], row["owner_name"]
+#                 ,row["contact_details"], row["notes"], row["checked_in"], vet, row["id"])
+#         pet_list.append(pet)
+#     return pet_list
+
+
+# INNER JOIN VISITS
+# on visits.location_id = locations.id
+# INNER JOIN users
+# ON visits.user_id = users.id

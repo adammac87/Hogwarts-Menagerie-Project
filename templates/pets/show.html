@@ -2,10 +2,19 @@
 {% block content %}
 show  fluff - this is my individual pet view. be nice to have a seperate link to notes. maybe add a pic?
 
-<div class="boxed">
 
+<body id="singlepet">
+
+    <div class="boxed">
 <div>
-    {{pet.name}}<br>{{pet.breed}}<br>{{pet.gender}}<br>{{pet.birthday}}<br>{{pet.owner_name}}<br>{{pet.contact_details}}<br>{{pet.checked_in}}<br>{{pet.vet.first_name}}<br>{{pet.vet.last_name}}
+    Name:<br>{{pet.name}}<br>
+    Breed:<br>{{pet.breed}}<br>
+    Gender:<br>{{pet.gender}}<br>
+    Birthday:<br>{{pet.birthday}}<br>
+    Owner:<br>{{pet.owner_name}}<br>
+    Contact Details:<br>{{pet.contact_details}}<br>
+    Checked in:<br>{{pet.checked_in}}<br>
+    Keeper: <br>{{pet.vet.first_name}}<br>{{pet.vet.last_name}}
 </div>
 
 <div>
@@ -14,3 +23,5 @@ show  fluff - this is my individual pet view. be nice to have a seperate link to
 </div>
 </div>
 {% endblock %}
+
+</body>
