@@ -99,7 +99,8 @@ def get_notes_get(id):
     return render_template('pets/note_edit.html', pet=pet)
 
 
-# @pets_blueprint.route("/pets/<id>/notes", methods=['GET'])
-# def search_by_petname(almost_name):
-#     pet = pet_repository.select_pet(id)
-#     return render_template('pets/notes.html', pet=pet)
+@pets_blueprint.route("/pets/search", methods=['POST'])
+def search_by_petname():
+    almost_name =request.form['search']
+    pet_list = pet_repository.search_by_petname(almost_name)
+    return render_template('pets/index.html', all_pets=pet_list)

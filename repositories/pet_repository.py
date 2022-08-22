@@ -65,18 +65,18 @@ def show_all_vet_pets(pet):
 
 
 
-# def search_by_petname(almost_name):
-#     pet_list = []
-#     sql = """SELECT pet.* FROM pets
-#     WHERE lower(pet.name) like %s"""
-#     values = [almost_name]
-#     results = run_sql(sql, values)
-#     for row in results:
-#         vet = vet_repository.select_vet(row["vet_id"])
-#         pet = Pet(row["name"], row["breed"], row["gender"], row["birthday"], row["owner_name"]
-#                 ,row["contact_details"], row["notes"], row["checked_in"], vet, row["id"])
-#         pet_list.append(pet)
-#     return pet_list
+def search_by_petname(almost_name):
+    pet_list = []
+    sql = """SELECT * FROM pets
+    WHERE lower(name) like %s"""
+    values = ['%'+almost_name+'%']
+    results = run_sql(sql, values)
+    for row in results:
+        vet = vet_repository.select_vet(row["vet_id"])
+        pet = Pet(row["name"], row["breed"], row["gender"], row["birthday"], row["owner_name"]
+                ,row["contact_details"], row["notes"], row["checked_in"], vet, row["id"])
+        pet_list.append(pet)
+    return pet_list
 
 
 # INNER JOIN VISITS
