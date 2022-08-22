@@ -14,7 +14,7 @@ body {
 }
 
 </style>
-}
+
 
 header {
     display: flex;
@@ -28,20 +28,34 @@ header {
 
 footer {
 
-    background-color: #941075;
-    color: white;
+color: rgb(0, 0, 0);
     padding: 1px;
     display: flex center;
     text-align: center;
-    flex-direction: row;
-    justify-content: space-evenly;
+
+    
+        text-shadow: 1px 2px 3px red,
+                2px 1px 4px rgb(255, 0, 221),
+                4px 3px 1px rgb(42, 71, 165),
+                1px 0px 0.2em;
+            padding-bottom: 0px;
+            padding-top: 0px;
+            padding-left: 0px;
+            border-radius: 0px;
 }
 
 #mainheader {
+
     font-size: 80px;
     position: center;
     color: black;
-    text
+    
+    text-shadow: 1px 2px 3px red,
+        2px 1px 4px rgb(255, 0, 221),
+        4px 3px 1px rgb(42, 71, 165),
+        1px 0px 0.2em
+    
+     
 }
 
 #singlekeeper {
@@ -64,8 +78,7 @@ footer {
 .newbox {
         list-style: none ;
         position: center;
-            justify-content: center;
-                flex-direction: right;
+
             background-image: url(https://media.istockphoto.com/photos/light-beige-crumpled-kraft-paper-texture-background-picture-id1373720056?k=20&m=1373720056&s=612x612&w=0&h=-QO2TRZriIZE2S3OAhZdeexTWPAn2PFAjWuGDbuFJvo=);
             background-color: rgb(222, 136, 37);
             border: 2px #941075;
@@ -76,6 +89,7 @@ footer {
             border-radius: 50px;
             width: 25%;
             margin: 5%;
+
 }
 
 
@@ -94,10 +108,12 @@ footer {
     height: 80%;
     text-align: center;
     
+   
 
 }
 
 .boxed {
+    
     list-style: none; 
     flex-direction: row;
     background-image: url(https://media.istockphoto.com/photos/light-beige-crumpled-kraft-paper-texture-background-picture-id1373720056?k=20&m=1373720056&s=612x612&w=0&h=-QO2TRZriIZE2S3OAhZdeexTWPAn2PFAjWuGDbuFJvo=);

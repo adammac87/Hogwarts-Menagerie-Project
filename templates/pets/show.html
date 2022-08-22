@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-show  fluff - this is my individual pet view. be nice to have a seperate link to notes. maybe add a pic?
+
 
 
 <body id="singlepet">
@@ -8,18 +8,33 @@ show  fluff - this is my individual pet view. be nice to have a seperate link to
     <div class="boxed">
 <div>
     Name:<br>{{pet.name}}<br>
+    <br>
+    <br>
     Breed:<br>{{pet.breed}}<br>
+    <br>
+    <br>
     Gender:<br>{{pet.gender}}<br>
+    <br>
+    <br>
     Birthday:<br>{{pet.birthday}}<br>
+    <br>
+    <br>
     Owner:<br>{{pet.owner_name}}<br>
+    <br>
+    <br>
     Contact Details:<br>{{pet.contact_details}}<br>
+    <br>
+    <br>
     Checked in:<br>{{pet.checked_in}}<br>
+    <br>
+    <br>
     Keeper: <br>{{pet.vet.first_name}}<br>{{pet.vet.last_name}}
 </div>
 
 <div>
-<p><a href="/pets/{{pet.id}}/edit">Edit</a></p>
-<p><a href="/pets/{{pet.id}}/notes">notes</a></p>
+    <p><a href="/pets/{{pet.id}}/notes">Additional Notes</a></p>
+<p><a href="/pets/{{pet.id}}/edit">Edit Details</a></p>
+
 </div>
 </div>
 {% endblock %}

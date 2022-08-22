@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-edit fluff
+
+<body id="singlepet">
 
 <div class="boxed">
 
@@ -8,7 +9,7 @@ edit fluff
 
     <div>
         <label for="notes">notes:</label>
-        <input type="text" name="notes" id="notes">
+        <input type="text" value="{{notes}}" name="notes" id="notes">
     </div>
 
 
@@ -18,7 +19,7 @@ edit fluff
 </form>
 
 </div>
-
+</body>
 
 
 
