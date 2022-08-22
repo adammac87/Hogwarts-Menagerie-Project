@@ -5,7 +5,7 @@
 <body id="singlepet" >
 
     <div class="newbox">
-<li><a href="/pets/new">New Pet</a></li>
+<li><a href="/pets/new">New Creature</a></li>
 </div>
     <br>
     <hr>
@@ -21,7 +21,7 @@
     Pet ID: {{pet.id}}
  
 <form action="/pets/delete/{{pet.id}}" method='POST'>
-<input type="submit" value ="Remove Pet">
+<input type="submit" onclick="return confirm('Are you sure you want to remove {{pet.name}}');"value ="Remove Creature">
 </form>
 </div>
 <br>

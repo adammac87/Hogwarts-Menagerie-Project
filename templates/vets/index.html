@@ -19,7 +19,7 @@ Keeper Name: <a href="/vets/{{vet.id}}"><br><br>{{vet.first_name}} <br>{{vet.las
 <br>
 <br>
 <form action="/vets/delete/{{vet.id}}" method='POST'>
-    <input type="submit" value="Remove Keeper">
+    <input type="submit"  onclick="return confirm('Are you sure you want to remove {{vet.first_name}}{{vet.last_name}}');" value="Remove Keeper" >
 </form>
 </div>
 
