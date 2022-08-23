@@ -162,6 +162,19 @@ color: rgb(0, 0, 0);
     margin: 5%;
 }
 
+
+
+
+.search {
+    height: 30px;
+    width: 500px;
+    border: 2px solid #aeaeb5;
+}
+    .search:focus {
+    outline: none;
+    border-color: #d471ce;
+    box-shadow: 0 0 10px #c314b7;
+    }
 /* #footer {
     
 } */

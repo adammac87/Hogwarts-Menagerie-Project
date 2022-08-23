@@ -14,10 +14,19 @@ I want the functionlality to add and delete vets -->
     <br>
     <br>
     Speciality:      <br>{{vet.speciality}}
+    <br>
+    <br>
+    <br>
+        Assigned Creatures:
+    {%for pet in pets%}
+    <p>{{pet.name}}</p>
+    {% endfor %}
 
     
 </div>
-
+<br>
+<br>
+<br>
 <div>
     <p><a href="/vets/{{vet.id}}/edit">Change Keeper Details</a></p>
 </div>

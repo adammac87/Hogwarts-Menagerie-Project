@@ -44,7 +44,3 @@ def update_vet(vet):
     values = [vet.first_name, vet.last_name, vet.speciality, vet.id]
     run_sql(sql, values)
 
-# def show_vets_pets(vet):
-#     sql = "SELECT * FROM pets WHERE vet id =%s"
-#     values = [vet.id]
-#     run_sql(sql,values)
