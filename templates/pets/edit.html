@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-
+<section id="list">
 
 <body id="singlepet">
+    <div class="boxed">
 <form action="/pets/{{pet.id}}" method="POST">
 
-<div class="boxed">
+
 
     <div>
         <label for="name">Name:</label>
@@ -60,11 +61,7 @@
 
 
 </div>
-
-</body>
-
-
-
-
+</section>
 
 {% endblock %}
+</body>

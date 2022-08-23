@@ -1,22 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
 
-
+<section id="list">
 <body id="singlepet">
 
 
 <div class="boxed">
 
+
+PET NOTES:
+<div>
+    
+    <textarea value="{pet.notes}"  readonly class="notebox">{{pet.notes}}</textarea>
+</div>
 <div>
     <p><a href="/pets/{{pet.id}}/notes_edit">Edit</a></p>
 
 </div>
-
-<div>
-    PET NOTES: {{pet.notes}}
 </div>
-
-</div>
+</section>
 {% endblock %}
 
 </body>

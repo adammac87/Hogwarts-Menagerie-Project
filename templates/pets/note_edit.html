@@ -1,27 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
 
+
+<section id="list">
 <body id="singlepet">
 
 <div class="boxed">
 
 <form action="/pets/{{pet.id}}/notes_edit" method="POST">
-    
+    <label for="notes">Notes:</label>
     <div>
-        <label for="notes">Notes:</label>
-        <input type="text" value="{{pet.notes}}" name="notes" id="notes">
+        
+        <textarea value="{pet.notes}"  class="notebox" type="text"  name="notes" id="notes"></textarea>
     </div>
 
 
-    <button type="submit">Update Notes
+    <button class="button" type="submit">Update Notes
     </button>
 
 </form>
 
 </div>
+</section>
+{% endblock %}
+
 </body>
 
-<
 
 
 
@@ -30,4 +34,4 @@
 
 
 
-{% endblock %}
+
