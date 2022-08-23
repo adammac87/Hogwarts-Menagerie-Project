@@ -1,6 +1,7 @@
-html {}
+html 
 
-body {
+body {cursor: url(https://cur.cursors-4u.net/user/use-1/use160.cur), default !important;
+        
 
     background-image: url(https:/images.ctfassets.net/usf1vwtuqyxm/2pcaAS2VS1yEZe5xz42LUF/436fcbacbbf9834a009b23ff677e3522/USJ_wwhp2.jpg);
     background-attachment: fixed;
@@ -11,6 +12,7 @@ body {
     box-sizing: border-box;
     font-family: 'Sofia';
     font-size: 22px;
+
 }
 
 </style>
@@ -173,8 +175,15 @@ color: rgb(0, 0, 0);
     .search:focus {
     outline: none;
     border-color: #d471ce;
-    box-shadow: 0 0 10px #c314b7;
+    box-shadow: 0 0 10px #bf26b5;
     }
+
+
+        li a:hover {
+            text-shadow: 2px 2px 10px #e74f98;
+    
+            filter: dropshadow(color=#e3ef78, offx=2, offy=2);
+        }
 /* #footer {
     
 } */
