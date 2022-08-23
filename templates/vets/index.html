@@ -1,14 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 
+<section id="list">
 <body id="singlekeeper">
 
 <div class="newbox">
 <li><a href="/vets/new">New Keeper</a></li>
 </div>
+</body>
+</section>
 
-
-
+<section id="list">
 
 {% for vet in all_vets %}
 <div class="boxed">
@@ -31,7 +33,7 @@ Keeper Name: <a href="/vets/{{vet.id}}"><br><br>{{vet.first_name}} <br>{{vet.las
 <br>
 
 </div>
-
+</section>
 
 {% endblock %}
 
