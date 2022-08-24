@@ -51,17 +51,6 @@ def select_pet(id):
     return pet 
 
 
-# def show_all_vet_pets(pet):
-#     pets = []
-#     sql = "SELECT * FROM pets WHERE vet_id = %s"
-#     results = run_sql(sql)
-#     for row in results:
-#         vet = vet_repository.select_vet(row["vet_id"])
-#         pet = Pet(row["name"], row["breed"], row["gender"], row["birthday"], row["owner_name"],
-#                 row["contact_details"], row["notes"], row["checked_in"], vet, row["id"])
-#         pets.append(pet)
-#     return pets
-
 
 
 

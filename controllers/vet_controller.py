@@ -5,7 +5,7 @@ from repositories import pet_repository
 from models.pet import Pet
 from models.vet import Vet
 
-vets_blueprint = Blueprint("vets",__name__)
+vets_blueprint = Blueprint("vets", __name__)
 
 
 @vets_blueprint.route("/vets")
@@ -18,7 +18,7 @@ def show_all_vets():
 def show_vet(id):
     vet = vet_repository.select_vet(id)
     pets = pet_repository.show_all_vet_pets(id)
-    return render_template('vets/show.html', vet=vet , pets=pets)
+    return render_template('vets/show.html', vet=vet, pets=pets)
 
 
 @vets_blueprint.route("/vets/new", methods=['GET'])
@@ -58,6 +58,3 @@ def update_vet(id):
     new_vet = Vet(first_name, last_name, speciality, id)
     vet_repository.update_vet(new_vet)
     return redirect('/vets')
-
-
-
