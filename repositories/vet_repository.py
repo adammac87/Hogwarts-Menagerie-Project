@@ -23,6 +23,8 @@ def select_all_vets():
         vets.append(vet)
     return vets
 
+
+
 def select_vet(id):
     vet = None
     sql = "SELECT * FROM vets WHERE id =%s"
@@ -37,6 +39,14 @@ def delete_vet(id):
     sql = "DELETE FROM vets WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+
+# to delete vet
+# define the function and its name
+# do and sql query to delete the vet from where it id is
+# return the values
+# run the sql
+
 
 
 def update_vet(vet):

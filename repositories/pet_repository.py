@@ -31,7 +31,7 @@ def update_pet(pet):
 
 def select_all_pets():
     pets = []
-    sql = "SELECT * FROM pets"
+    sql = "SELECT * FROM pets ORDER by name"
     results= run_sql(sql)
     for row in results:
         vet = vet_repository.select_vet(row["vet_id"])
@@ -79,3 +79,4 @@ def show_all_vet_pets(vet_id):
                 row["contact_details"], row["notes"], row["checked_in"], vet, row["id"])
         pet_list.append(pet)
     return pet_list
+
