@@ -9,7 +9,7 @@ and was completed after my first 4 weeks of CodeClan.
 The brief was to have an app that could perform crud function, have persistent
 data, and allow pets to be assigned to vets. It could only be made using:
 
-*HTML*
+*HTML*<br>
 *CSS*
 *PYTHON*
 *POSTGRESQL*
