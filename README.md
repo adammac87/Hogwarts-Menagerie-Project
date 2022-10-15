@@ -10,9 +10,9 @@ The brief was to have an app that could perform crud function, have persistent
 data, and allow pets to be assigned to vets. It could only be made using:
 
 *HTML*<br>
-*CSS*
-*PYTHON*
-*POSTGRESQL*
+*CSS*<br>
+*PYTHON*<br>
+*POSTGRESQL*<br>
 *FLASK*
 
 I added the extension of giving the user the functionality of searching the database for both pets and vets and checking pets in and out.
